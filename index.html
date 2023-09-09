@@ -47,12 +47,16 @@
 			}
 		</style>
 		<script>
+			let timeoutID;
+
 			document.addEventListener("click", () => {
+				clearTimeout(timeoutID);
+
 				navigator.clipboard.writeText("#2563eb");
 
 				const p = document.querySelector("p");
 				p.style.opacity = 1;
-				setTimeout(() => {
+				timeoutID = setTimeout(() => {
 					p.style.opacity = 0;
 				}, 1500);
 			});
